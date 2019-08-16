@@ -18,8 +18,9 @@ public class Producer {
 
     /**
      * 发送消息 - 根据路由
-     * @param routingKey    路由键
-     * @param msg   消息
+     *
+     * @param routingKey 路由键
+     * @param msg        消息
      */
     public void sendDirectMsg(String routingKey, Object msg) {
         template.convertAndSend(routingKey, msg);
@@ -28,9 +29,10 @@ public class Producer {
 
     /**
      * 发送消息 - 根据路由和指定交换器
-     * @param exchange  交换器名称
-     * @param routingKey    路由键
-     * @param msg   消息
+     *
+     * @param exchange   交换器名称
+     * @param routingKey 路由键
+     * @param msg        消息
      */
     public void sendExchangeMsg(String exchange, String routingKey, Object msg) {
         template.convertAndSend(exchange, routingKey, msg);
